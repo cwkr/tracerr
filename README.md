@@ -1,4 +1,4 @@
-# Tracerr ![code coverage](jacoco-badge.svg "code coverage")
+# Tracerr [![Build Status](https://travis-ci.org/cwkr/tracerr.svg?branch=master)](https://travis-ci.org/cwkr/tracerr) [![Coverage Status](https://coveralls.io/repos/github/cwkr/tracerr/badge.svg?branch=master)](https://coveralls.io/github/cwkr/tracerr?branch=master) [![Javadocs](https://www.javadoc.io/badge/de.cwkr/tracerr.svg?color=blue)](https://www.javadoc.io/doc/de.cwkr/tracerr)
 
 Error message collecting utility library.
 
