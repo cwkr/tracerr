@@ -25,6 +25,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import static de.cwkr.tracerr.util.UnmodifiableIterator.unmodifiableIterator;
 import static java.util.Collections.unmodifiableList;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -119,6 +121,26 @@ public final class ErrorTrace implements Iterable<String> {
         LOGGER.trace("toString()");
         return new ToStringBuilder(this).append("errors", errors)
                                         .build();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (o == null || getClass() != o.getClass()) return false;
+
+        ErrorTrace that = (ErrorTrace) o;
+
+        return new EqualsBuilder()
+            .append(errors, that.errors)
+            .isEquals();
+    }
+
+    @Override
+    public int hashCode() {
+        return new HashCodeBuilder(17, 37)
+            .append(errors)
+            .toHashCode();
     }
 
     public void isNull(Object obj, String msg, Object ...params) {

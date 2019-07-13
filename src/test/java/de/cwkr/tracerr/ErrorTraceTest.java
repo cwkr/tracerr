@@ -15,12 +15,16 @@
  */
 package de.cwkr.tracerr;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import static de.cwkr.tracerr.util.Lists.listOf;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
+import org.apache.commons.lang3.StringUtils;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -68,7 +72,7 @@ public class ErrorTraceTest {
     }
 
     @Test
-    public void throwErros() {
+    public void throwErrors() {
         ErrorTrace errorTrace = new ErrorTrace(listOf("one", "two", "three"));
         assertThrows(CustomException.class, () -> errorTrace.throwErrors(CustomException::new, "There were {} errors", errorTrace.countErrors()));
     }
@@ -81,6 +85,30 @@ public class ErrorTraceTest {
             count++;
         }
         assertEquals(3, count);
+    }
+
+    @Test
+    public void toStringTest() {
+        ErrorTrace errorTrace = new ErrorTrace(listOf("one", "two"));
+        assertTrue(StringUtils.contains(errorTrace.toString(), "[one, two]"));
+    }
+
+    @Test
+    public void equalsTest() {
+        ErrorTrace errorTraceOne = new ErrorTrace(listOf("one", "two"));
+        ErrorTrace errorTraceTwo = new ErrorTrace(listOf("one", "two"));
+        ErrorTrace errorTrace = new ErrorTrace();
+        errorTrace.addErrors(errorTraceOne);
+        errorTrace.addError("three");
+
+        Set<ErrorTrace> errorTraces = new HashSet<>();
+        errorTraces.add(errorTraceOne);
+        errorTraces.add(errorTraceTwo);
+        errorTraces.add(errorTrace);
+
+        assertEquals(errorTraceOne, errorTraceTwo);
+        assertNotEquals(errorTrace, errorTraceOne);
+        assertEquals(2, errorTraces.size());
     }
 
     @Test
