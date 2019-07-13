@@ -18,6 +18,12 @@ package de.cwkr.tracerr.util;
 import java.util.Iterator;
 import java.util.Objects;
 
+/**
+ * Interator implementation preventing modification
+ *
+ * @param <E> contained type
+ * @author Christian Winkler
+ */
 public final class UnmodifiableIterator<E> implements Iterator<E> {
     private final Iterator<? extends E> iterator;
 
