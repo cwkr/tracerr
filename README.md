@@ -1,4 +1,4 @@
-# Tracerr
+# Tracerr ![code coverage](jacoco-badge.svg "code coverage")
 
 Error message collecting utility library.
 
