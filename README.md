@@ -1,6 +1,6 @@
-# Tracerr [![Build Status](https://travis-ci.org/cwkr/tracerr.svg?branch=master)](https://travis-ci.org/cwkr/tracerr) [![Coverage Status](https://coveralls.io/repos/github/cwkr/tracerr/badge.svg?branch=master)](https://coveralls.io/github/cwkr/tracerr?branch=master) [![Javadocs](https://www.javadoc.io/badge/de.cwkr/tracerr.svg?color=blue)](https://www.javadoc.io/doc/de.cwkr/tracerr)
+# Validation Util [![Build Status](https://travis-ci.org/cwkr/validation-util.svg?branch=master)](https://travis-ci.org/cwkr/validation-util) [![Coverage Status](https://coveralls.io/repos/github/cwkr/validation-util/badge.svg?branch=master)](https://coveralls.io/github/cwkr/validation-util?branch=master) [![Javadocs](https://www.javadoc.io/badge/de.cwkr/validation-util.svg?color=blue)](https://www.javadoc.io/doc/de.cwkr/validation-util)
 
-Error message collecting utility library.
+Validation utility library.
 
 
 ## Installing
@@ -9,21 +9,23 @@ Add this dependency to the `<dependencies>` section of your `pom.xml` file:
 
 ```xml
 <dependency>
-    <groupId>de.cwkr</groupId>
-    <artifactId>tracerr</artifactId>
-    <version>0.1</version>
+    <groupId>de.cwkr.validation</groupId>
+    <artifactId>validation-util</artifactId>
+    <version>1.0</version>
 </dependency>
 ```
 
 
 ## Using
 
+The class `de.cwkr.validation.util.Errors` is based on Martin Fowler's **Notification Pattern** (https://www.martinfowler.com/articles/replaceThrowWithNotification.html).
+
 ```java
-ErrorTrace errorTrace = new ErrorTrace();
-errorTrace.isNotBlank(str, "str must not be blank");
-errorTrace.isNotEqual(str, "foobar", "str must not be equal to '{}'", "foobar");
-errorTRace.logErrors(logger);
-errorTrace.throwErrors(CustomException::new, "There were {} errors", errorTrace.countErrors())
+Errors errors = new Errors();
+errors.isNotBlank(str, "str must not be blank");
+errors.isNotEqual(str, "foobar", "str must not be equal to '{}'", "foobar");
+errors.logErrors(logger);
+errors.throwErrors(CustomException::new, "There were {} errors", errors.countErrors())
 ```
 
 

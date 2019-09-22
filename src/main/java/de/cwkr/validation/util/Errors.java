@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.cwkr.tracerr;
+package de.cwkr.validation.util;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -22,8 +22,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.CopyOnWriteArrayList;
-import static de.cwkr.tracerr.util.UnmodifiableIterator.unmodifiableIterator;
-import static java.util.Collections.unmodifiableList;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -31,20 +29,22 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.helpers.MessageFormatter;
+import static de.cwkr.validation.util.UnmodifiableIterator.unmodifiableIterator;
+import static java.util.Collections.unmodifiableList;
 
 /**
  * Error collecting container; Thread-safe using {@link CopyOnWriteArrayList}.
  *
  * @author Christian Winkler
  */
-public final class ErrorTrace implements Iterable<String> {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ErrorTrace.class);
+public final class Errors implements Iterable<String> {
+    private static final Logger LOGGER = LoggerFactory.getLogger(Errors.class);
     private final List<String> errors = new CopyOnWriteArrayList<>();
 
-    public ErrorTrace() {
+    public Errors() {
     }
 
-    public ErrorTrace(Iterable<String> errors) {
+    public Errors(Iterable<String> errors) {
         addErrors(errors);
     }
 
@@ -129,7 +129,7 @@ public final class ErrorTrace implements Iterable<String> {
 
         if (o == null || getClass() != o.getClass()) return false;
 
-        ErrorTrace that = (ErrorTrace) o;
+        Errors that = (Errors) o;
 
         return new EqualsBuilder()
             .append(errors, that.errors)

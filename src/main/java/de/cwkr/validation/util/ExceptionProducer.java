@@ -13,20 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.cwkr.tracerr.util;
+package de.cwkr.validation.util;
 
-import java.util.Iterator;
 import java.util.List;
-import static de.cwkr.tracerr.util.UnmodifiableIterator.unmodifiableIterator;
-import static java.util.Collections.singletonList;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-import org.junit.jupiter.api.Test;
 
-public class UnmodifiableIteratorTest {
-    @Test
-    public void remove_UnsupportedOperationException() {
-        List<String> list = singletonList("One");
-        Iterator<String> iterator = unmodifiableIterator(list.iterator());
-        assertThrows(UnsupportedOperationException.class, iterator::remove);
-    }
+/**
+ * Specification of functional interface used by {@link Errors#throwErrors(ExceptionProducer, String, Object...)}.
+ *
+ * @param <T> runtime exception type
+ * @author Christian Winkler
+ */
+@FunctionalInterface
+public interface ExceptionProducer<T extends RuntimeException> {
+    T produce(String message, List<String> errors);
 }

@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.cwkr</groupId>
-    <artifactId>tracerr</artifactId>
-    <version>0.2</version>
+    <groupId>de.cwkr.validation</groupId>
+    <artifactId>validation-util</artifactId>
+    <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>${project.groupId}:${project.artifactId}</name>
-    <url>https://github.com/cwkr/tracerr</url>
-    <description>Error message collecting utility library</description>
+    <url>https://github.com/cwkr/validation-util</url>
+    <description>Validation utility library</description>
 
     <licenses>
         <license>
@@ -28,13 +28,13 @@
     </developers>
 
     <scm>
-        <url>https://github.com/cwkr/tracerr</url>
-        <connection>scm:git:git://github.com/cwkr/tracerr.git</connection>
-        <developerConnection>scm:git:git@github.com:cwkr/tracerr.git</developerConnection>
+        <url>https://github.com/cwkr/validation-util</url>
+        <connection>scm:git:git://github.com/cwkr/validation-util.git</connection>
+        <developerConnection>scm:git:git@github.com:cwkr/validation-util.git</developerConnection>
     </scm>
 
     <issueManagement>
-        <url>https://github.com/cwkr/tracerr/issues</url>
+        <url>https://github.com/cwkr/validation-util/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
 
@@ -45,10 +45,6 @@
     </properties>
 
     <distributionManagement>
-        <relocation>
-            <groupId>de.cwkr.validation</groupId>
-            <artifactId>validation-util</artifactId>
-        </relocation>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
@@ -64,7 +60,7 @@
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
-                <version>5.4.2</version>
+                <version>5.5.2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -182,7 +178,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.26</version>
+            <version>1.7.28</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -192,7 +188,7 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.26</version>
+            <version>1.7.28</version>
             <scope>test</scope>
         </dependency>
         <dependency>
