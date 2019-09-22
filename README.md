@@ -1,4 +1,4 @@
-# Validation Util [![Build Status](https://travis-ci.org/cwkr/validation-util.svg?branch=master)](https://travis-ci.org/cwkr/validation-util) [![Coverage Status](https://coveralls.io/repos/github/cwkr/validation-util/badge.svg?branch=master)](https://coveralls.io/github/cwkr/validation-util?branch=master) [![Javadocs](https://www.javadoc.io/badge/de.cwkr/validation-util.svg?color=blue)](https://www.javadoc.io/doc/de.cwkr/validation-util)
+# Validation Util [![Build Status](https://travis-ci.org/cwkr/validation-util.svg?branch=master)](https://travis-ci.org/cwkr/validation-util) [![Coverage Status](https://coveralls.io/repos/github/cwkr/validation-util/badge.svg?branch=master)](https://coveralls.io/github/cwkr/validation-util?branch=master) [![Javadocs](https://www.javadoc.io/badge/de.cwkr.validation/validation-util.svg?color=blue)](https://www.javadoc.io/doc/de.cwkr.validation/validation-util)
 
 Validation utility library.
 
