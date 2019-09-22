@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.cwkr.tracerr;
+package de.cwkr.validation.util;
 
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import de.cwkr.validation.util.CustomException;
-import de.cwkr.validation.util.Errors;
 import org.apache.commons.lang3.StringUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -40,7 +38,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
-public class ErrorTraceTest {
+public class ErrorsTest {
     @Test
     public void getErrors() {
         Errors errorTrace = new Errors(listOf("one", "two"));
