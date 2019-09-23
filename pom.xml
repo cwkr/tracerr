@@ -6,7 +6,7 @@
 
     <groupId>de.cwkr</groupId>
     <artifactId>tracerr</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.2</version>
     <packaging>jar</packaging>
     <name>${project.groupId}:${project.artifactId}</name>
     <url>https://github.com/cwkr/tracerr</url>
@@ -45,6 +45,10 @@
     </properties>
 
     <distributionManagement>
+        <relocation>
+            <groupId>de.cwkr.validation</groupId>
+            <artifactId>validation-util</artifactId>
+        </relocation>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
@@ -156,6 +160,20 @@
                         <version>2.3.1</version>
                     </dependency>
                 </dependencies>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.6</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
