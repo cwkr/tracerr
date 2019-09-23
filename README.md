@@ -11,7 +11,7 @@ Add this dependency to the `<dependencies>` section of your `pom.xml` file:
 <dependency>
     <groupId>de.cwkr.validation</groupId>
     <artifactId>validation-util</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
