@@ -117,7 +117,7 @@ public final class ValidCollectionUtils {
      * @throws NullPointerException if the collection is {@code null}
      * @throws IllegalArgumentException if an element is {@code null}
      */
-    public static <T> LinkedHashSet<T> setOf(final Collection<? extends T> collection) {
+    public static <T> Set<T> setOf(final Collection<? extends T> collection) {
         Validate.noNullElements(collection);
         return new LinkedHashSet<>(collection);
     }
