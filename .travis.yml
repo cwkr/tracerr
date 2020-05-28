@@ -1,5 +1,12 @@
 language: java
+dist: bionic
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
 jdk:
+  - oraclejdk8
+  - openjdk8
   - openjdk11
 cache:
   directories:
@@ -7,5 +14,7 @@ cache:
     - $HOME/.m2/repository
 install:
     - mvn install -DskipTests=true -Dmaven.javadoc.skip=true -Dsource.skip=true -Dgpg.skip=true -B -V
+script:
+    - mvn test -Dpmd.skip=true -B
 after_success:
   - mvn jacoco:report coveralls:report
