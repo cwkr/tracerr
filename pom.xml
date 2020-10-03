@@ -6,7 +6,7 @@
 
     <groupId>de.cwkr</groupId>
     <artifactId>cwkr-util</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Cwkr Util</name>
     <url>https://github.com/cwkr/util-java</url>
