@@ -10,12 +10,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- `ValidCollectionUtils.setOf()`
-- `ValidCollectionUtils.unmodifiableSetOf()`
+- `de.cwkr.util.Sets.setOf()`
+- `de.cwkr.util.Sets.unmodifiableSetOf()`
 
 ### Changed
 
-- `Lists` renamed to `ValidCollectionUtils`
+- Moved everything to package `de.cwkr.util`
+
+
+## [1.0.2] - 2020-10-03
 
 
 ## [1.0.1] - 2019-09-23
@@ -29,7 +32,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Package renamed to `de.cwkr.validation.util`
+- Package renamed to `de.cwkr.util`
 - `ErrorTrace` renamed to `Errors`
 
 
