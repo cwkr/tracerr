@@ -1,5 +1,5 @@
 language: java
-dist: focal
+dist: bionic
 jdk:
   - openjdk8
   - openjdk11
@@ -13,4 +13,3 @@ script:
     - mvn test -Dpmd.skip=true -B
 after_success:
   - mvn jacoco:report coveralls:report
-
