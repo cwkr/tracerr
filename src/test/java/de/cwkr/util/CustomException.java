@@ -13,20 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.cwkr.validation.util;
+package de.cwkr.util;
 
-import java.util.Iterator;
 import java.util.List;
-import org.junit.jupiter.api.Test;
-import static de.cwkr.validation.util.UnmodifiableIterator.unmodifiableIterator;
-import static java.util.Collections.singletonList;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static java.util.Collections.unmodifiableList;
 
-public class UnmodifiableIteratorTest {
-    @Test
-    public void remove_UnsupportedOperationException() {
-        List<String> list = singletonList("One");
-        Iterator<String> iterator = unmodifiableIterator(list.iterator());
-        assertThrows(UnsupportedOperationException.class, iterator::remove);
+/**
+ * Custom test exception
+ */
+public class CustomException extends RuntimeException {
+    private final List<String> errors;
+
+    public CustomException(String message, List<String> errors) {
+        super(message);
+        this.errors = unmodifiableList(errors);
+    }
+
+    public List<String> getErrors() {
+        return errors;
     }
 }

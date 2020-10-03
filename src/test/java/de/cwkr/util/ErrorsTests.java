@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.cwkr.validation.util;
+package de.cwkr.util;
 
 import java.util.HashSet;
 import java.util.List;
@@ -24,7 +24,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.slf4j.Logger;
-import static de.cwkr.validation.util.Lists.listOf;
+import static de.cwkr.util.Lists.listOf;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -38,7 +38,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
-public class ErrorsTest {
+public class ErrorsTests {
     @Test
     public void getErrors() {
         Errors errorTrace = new Errors(listOf("one", "two"));
@@ -91,7 +91,8 @@ public class ErrorsTest {
     @Test
     public void toStringTest() {
         Errors errors = new Errors(listOf("one", "two"));
-        assertTrue(StringUtils.contains(errors.toString(), "[one, two]"));
+        String x = errors.toString();
+        assertTrue(StringUtils.contains(x, "{one,two}"));
     }
 
     @Test

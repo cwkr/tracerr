@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.cwkr.validation</groupId>
-    <artifactId>validation-util</artifactId>
-    <version>1.0.2</version>
+    <groupId>de.cwkr</groupId>
+    <artifactId>cwkr-util</artifactId>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
-    <name>Validation Util</name>
+    <name>Cwkr Util</name>
     <url>https://github.com/cwkr/util-java</url>
-    <description>Validation utility library</description>
+    <description>Java Utility Library</description>
 
     <licenses>
         <license>
@@ -45,10 +45,6 @@
     </properties>
 
     <distributionManagement>
-        <relocation>
-            <groupId>de.cwkr</groupId>
-            <artifactId>cwkr-util</artifactId>
-        </relocation>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
@@ -64,7 +60,7 @@
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
-                <version>5.5.2</version>
+                <version>5.6.2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -109,11 +105,51 @@
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <rulesets>
+                        <ruleset>/category/java/cwkr/recommended.xml</ruleset>
+                    </rulesets>
+                    <linkXRef>false</linkXRef>
+                    <printFailingErrors>true</printFailingErrors>
+                    <failOnViolation>true</failOnViolation>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>net.sourceforge.pmd</groupId>
+                        <artifactId>pmd-core</artifactId>
+                        <version>6.24.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>net.sourceforge.pmd</groupId>
+                        <artifactId>pmd-java</artifactId>
+                        <version>6.24.0</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>de.cwkr</groupId>
+                        <artifactId>cwkr-pmd</artifactId>
+                        <version>1.3.0</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>3.2.0</version>
                 <configuration>
                     <show>public</show>
                     <source>8</source>
+                    <detectJavaApiLink>false</detectJavaApiLink>
                 </configuration>
                 <executions>
                     <execution>
@@ -127,7 +163,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>3.2.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -140,7 +176,7 @@
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.4</version>
+                <version>0.8.5</version>
                 <executions>
                     <execution>
                         <goals>
@@ -182,17 +218,17 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.28</version>
+            <version>1.7.30</version>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.9</version>
+            <version>3.11</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.28</version>
+            <version>1.7.30</version>
             <scope>test</scope>
         </dependency>
         <dependency>

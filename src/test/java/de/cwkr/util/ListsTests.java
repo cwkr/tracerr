@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2018 Christian Winkler.
+ * Copyright 2017-2020 Christian Winkler.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.cwkr.validation.util;
+package de.cwkr.util;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class ListsTest {
+public class ListsTests {
     @Test
     public void listOf1() {
         List<String> list = Lists.listOf(Collections.singleton("one"));
@@ -44,6 +45,27 @@ public class ListsTest {
     }
 
     @Test
+    public void listOf4() {
+        List<String> list = Lists.listOf("one");
+        list.add("two");
+        assertEquals(2, list.size());
+    }
+
+    @Test
+    public void listOfNull() {
+        assertThrows(NullPointerException.class, () -> {
+            Lists.listOf((String)null);
+        });
+    }
+
+    @Test
+    public void listOfNulls() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            Lists.listOf(null, null);
+        });
+    }
+
+    @Test
     public void unmodifiableListOf1() {
         List<String> list = Lists.unmodifiableListOf(Collections.singletonList("one"));
         assertEquals(1, list.size());
@@ -59,5 +81,25 @@ public class ListsTest {
     public void unmodifiableListOf3() {
         List<String> list = Lists.unmodifiableListOf("one", "two");
         assertThrows(UnsupportedOperationException.class, () -> list.add("three"));
+    }
+
+    @Test
+    public void unmodifiableListOf4() {
+        List<String> list = Lists.unmodifiableListOf("one");
+        assertThrows(UnsupportedOperationException.class, () -> list.add("two"));
+    }
+
+    @Test
+    public void unmodifiableListOfNull() {
+        assertThrows(NullPointerException.class, () -> {
+            Lists.unmodifiableListOf((String)null);
+        });
+    }
+
+    @Test
+    public void unmodifiableListOfNulls() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            Lists.unmodifiableListOf(null, null);
+        });
     }
 }

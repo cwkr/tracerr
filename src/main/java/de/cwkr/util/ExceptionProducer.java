@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Christian Winkler.
+ * Copyright 2019-2020 Christian Winkler.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,23 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.cwkr.validation.util;
+package de.cwkr.util;
 
 import java.util.List;
-import static java.util.Collections.unmodifiableList;
 
 /**
- * Custom test exception
+ * Specification of functional interface used by {@link Errors#throwErrors(ExceptionProducer, String, Object...)}.
+ *
+ * @param <T> runtime exception type
+ * @author Christian Winkler
  */
-public class CustomException extends RuntimeException {
-    private final List<String> errors;
-
-    public CustomException(String message, List<String> errors) {
-        super(message);
-        this.errors = unmodifiableList(errors);
-    }
-
-    public List<String> getErrors() {
-        return errors;
-    }
+@FunctionalInterface
+public interface ExceptionProducer<T extends RuntimeException> {
+    T produce(String message, List<String> errors);
 }
