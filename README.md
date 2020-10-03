@@ -1,4 +1,4 @@
-# Validation Util [![Build Status](https://travis-ci.org/cwkr/validation-util.svg?branch=master)](https://travis-ci.org/cwkr/validation-util) [![Coverage Status](https://coveralls.io/repos/github/cwkr/validation-util/badge.svg?branch=master)](https://coveralls.io/github/cwkr/validation-util?branch=master) [![Javadocs](https://www.javadoc.io/badge/de.cwkr.validation/validation-util.svg?color=blue)](https://www.javadoc.io/doc/de.cwkr.validation/validation-util)
+# Validation Util [![Build Status](https://travis-ci.org/cwkr/util-java.svg?branch=master)](https://travis-ci.org/cwkr/util-java) [![Coverage Status](https://coveralls.io/repos/github/cwkr/util-java/badge.svg?branch=master)](https://coveralls.io/github/cwkr/util-java?branch=master) [![Javadocs](https://www.javadoc.io/badge/de.cwkr.validation/validation-util.svg?color=blue)](https://www.javadoc.io/doc/de.cwkr.validation/validation-util)
 
 Validation utility library.
 
@@ -11,7 +11,7 @@ Add this dependency to the `<dependencies>` section of your `pom.xml` file:
 <dependency>
     <groupId>de.cwkr.validation</groupId>
     <artifactId>validation-util</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 </dependency>
 ```
 
