@@ -6,10 +6,10 @@
 
     <groupId>de.cwkr.validation</groupId>
     <artifactId>validation-util</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <packaging>jar</packaging>
-    <name>${project.groupId}:${project.artifactId}</name>
-    <url>https://github.com/cwkr/validation-util</url>
+    <name>Validation Util</name>
+    <url>https://github.com/cwkr/util-java</url>
     <description>Validation utility library</description>
 
     <licenses>
@@ -28,13 +28,13 @@
     </developers>
 
     <scm>
-        <url>https://github.com/cwkr/validation-util</url>
-        <connection>scm:git:git://github.com/cwkr/validation-util.git</connection>
-        <developerConnection>scm:git:git@github.com:cwkr/validation-util.git</developerConnection>
+        <url>https://github.com/cwkr/util-java</url>
+        <connection>scm:git:git://github.com/cwkr/util-java.git</connection>
+        <developerConnection>scm:git:git@github.com:cwkr/util-java.git</developerConnection>
     </scm>
 
     <issueManagement>
-        <url>https://github.com/cwkr/validation-util/issues</url>
+        <url>https://github.com/cwkr/util-java/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
 
@@ -45,6 +45,10 @@
     </properties>
 
     <distributionManagement>
+        <relocation>
+            <groupId>de.cwkr</groupId>
+            <artifactId>cwkr-util</artifactId>
+        </relocation>
         <snapshotRepository>
             <id>ossrh</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
