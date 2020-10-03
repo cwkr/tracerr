@@ -1,5 +1,5 @@
 /*
- * Copyright 2019 Christian Winkler.
+ * Copyright 2019-2020 Christian Winkler.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,7 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.cwkr.validation.util;
+package de.cwkr.util;
+
+import static de.cwkr.util.UnmodifiableIterator.unmodifiableIterator;
+import static java.util.Collections.unmodifiableList;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -29,8 +32,6 @@ import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.helpers.MessageFormatter;
-import static de.cwkr.validation.util.UnmodifiableIterator.unmodifiableIterator;
-import static java.util.Collections.unmodifiableList;
 
 /**
  * Error collecting container; Thread-safe using {@link CopyOnWriteArrayList}.

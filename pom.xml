@@ -4,13 +4,13 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>de.cwkr.validation</groupId>
-    <artifactId>validation-util</artifactId>
+    <groupId>de.cwkr</groupId>
+    <artifactId>cwkr-util</artifactId>
     <version>1.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Validation Util</name>
+    <name>Cwkr Util</name>
     <url>https://github.com/cwkr/util-java</url>
-    <description>Validation utility library</description>
+    <description>Java Utility Library</description>
 
     <licenses>
         <license>
@@ -60,7 +60,7 @@
             <dependency>
                 <groupId>org.junit</groupId>
                 <artifactId>junit-bom</artifactId>
-                <version>5.5.2</version>
+                <version>5.6.2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -106,7 +106,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.12.0</version>
+                <version>3.13.0</version>
                 <configuration>
                     <rulesets>
                         <ruleset>/allrules.xml</ruleset>
@@ -119,12 +119,12 @@
                     <dependency>
                         <groupId>net.sourceforge.pmd</groupId>
                         <artifactId>pmd-core</artifactId>
-                        <version>6.20.0</version>
+                        <version>6.28.0</version>
                     </dependency>
                     <dependency>
                         <groupId>net.sourceforge.pmd</groupId>
                         <artifactId>pmd-java</artifactId>
-                        <version>6.20.0</version>
+                        <version>6.28.0</version>
                     </dependency>
                     <dependency>
                         <groupId>de.cwkr</groupId>
@@ -145,7 +145,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>3.2.0</version>
                 <configuration>
                     <show>public</show>
                     <source>8</source>
@@ -162,7 +162,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>3.0.1</version>
+                <version>3.2.1</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -222,7 +222,7 @@
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.9</version>
+            <version>3.11</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>

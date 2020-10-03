@@ -1,5 +1,5 @@
 /*
- * Copyright 2017-2018 Christian Winkler.
+ * Copyright 2017-2020 Christian Winkler.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package de.cwkr.validation.util;
+package de.cwkr.util;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedHashSet;
 import java.util.List;
-import java.util.Set;
 import org.apache.commons.lang3.Validate;
 
 /**
@@ -29,8 +27,8 @@ import org.apache.commons.lang3.Validate;
  *
  * @author Christian Winkler
  */
-public final class ValidCollectionUtils {
-    private ValidCollectionUtils() {
+public final class Lists {
+    private Lists() {
     }
 
     /**
@@ -89,63 +87,5 @@ public final class ValidCollectionUtils {
      */
     public static <T> List<T> unmodifiableListOf(final Collection<? extends T> collection) {
         return Collections.unmodifiableList(listOf(collection));
-    }
-
-    /**
-     * Creates an {@link LinkedHashSet} containing all elements.
-     *
-     * @param elements elements to add to set
-     * @param <T> element type
-     * @return set instance
-     * @throws NullPointerException if elements is {@code null}
-     * @throws IllegalArgumentException if an element is {@code null}
-     */
-    @SafeVarargs
-    public static <T> Set<T> setOf(final T... elements) {
-        Validate.noNullElements(elements);
-        Set<T> set = new LinkedHashSet<>(elements.length);
-        set.addAll(Arrays.asList(elements));
-        return set;
-    }
-
-    /**
-     * Creates an {@link LinkedHashSet} from a {@link Collection}.
-     *
-     * @param collection elements
-     * @param <T> element type
-     * @return set instance
-     * @throws NullPointerException if the collection is {@code null}
-     * @throws IllegalArgumentException if an element is {@code null}
-     */
-    public static <T> Set<T> setOf(final Collection<? extends T> collection) {
-        Validate.noNullElements(collection);
-        return new LinkedHashSet<>(collection);
-    }
-
-    /**
-     * Creates an immutable {@link Set} containing all elements.
-     *
-     * @param elements elements to add to set
-     * @param <T> element type
-     * @return set instance
-     * @throws NullPointerException if elements is {@code null}
-     * @throws IllegalArgumentException if an element is {@code null}
-     */
-    @SafeVarargs
-    public static <T> Set<T> unmodifiableSetOf(final T... elements) {
-        return Collections.unmodifiableSet(setOf(elements));
-    }
-
-    /**
-     * Creates an immutable {@link Set} from a {@link Collection}.
-     *
-     * @param collection elements
-     * @param <T> element type
-     * @return set instance
-     * @throws NullPointerException if the collection is {@code null}
-     * @throws IllegalArgumentException if an element is {@code null}
-     */
-    public static <T> Set<T> unmodifiableSetOf(final Collection<? extends T> collection) {
-        return Collections.unmodifiableSet(setOf(collection));
     }
 }
