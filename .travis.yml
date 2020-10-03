@@ -1,11 +1,6 @@
 language: java
-dist: bionic
-addons:
-  apt:
-    packages:
-      - oracle-java8-installer
+dist: focal
 jdk:
-  - oraclejdk8
   - openjdk8
   - openjdk11
 cache:
@@ -18,3 +13,4 @@ script:
     - mvn test -Dpmd.skip=true -B
 after_success:
   - mvn jacoco:report coveralls:report
+
