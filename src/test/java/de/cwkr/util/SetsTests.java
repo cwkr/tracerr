@@ -18,7 +18,6 @@ package de.cwkr.util;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -26,23 +25,38 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class SetsTests {
     @Test
-    public void setOf1() {
-        Set<String> set = Sets.setOf(Collections.singleton("one"));
+    public void orderedSetOf1() {
+        Set<String> set = Sets.orderedSetOf(Collections.singleton("one"));
         set.add("two");
         assertEquals(2, set.size());
     }
 
     @Test
-    public void setOf2() {
-        Set<String> set = Sets.setOf("one", "two");
+    public void orderedSetOf2() {
+        Set<String> set = Sets.orderedSetOf("one", "two");
         set.add("three");
         assertEquals(3, set.size());
     }
 
     @Test
-    public void setOfNulls() {
+    public void orderedSetOf3() {
+        Set<String> set = Sets.orderedSetOf("one");
+        set.add("two");
+        set.add("three");
+        assertEquals(3, set.size());
+    }
+
+    @Test
+    public void orderedSetOfNull() {
+        assertThrows(NullPointerException.class, () -> {
+            Sets.orderedSetOf((String)null);
+        });
+    }
+
+    @Test
+    public void orderedSetOfNulls() {
         assertThrows(IllegalArgumentException.class, () -> {
-            Sets.setOf(null, null);
+            Sets.orderedSetOf(null, null);
         });
     }
 
@@ -65,9 +79,22 @@ public class SetsTests {
     }
 
     @Test
+    public void unmodifiableSetOf4() {
+        Set<String> set = Sets.unmodifiableSetOf("one");
+        assertThrows(UnsupportedOperationException.class, () -> set.add("three"));
+    }
+
+    @Test
+    public void unmodifiableSetOfNull() {
+        assertThrows(NullPointerException.class, () -> {
+            Sets.unmodifiableSetOf((String)null);
+        });
+    }
+
+    @Test
     public void unmodifiableSetOfNulls() {
         assertThrows(IllegalArgumentException.class, () -> {
-            Sets.setOf(null, null);
+            Sets.unmodifiableSetOf(null, null);
         });
     }
 }

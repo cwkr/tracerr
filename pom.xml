@@ -149,6 +149,7 @@
                 <configuration>
                     <show>public</show>
                     <source>8</source>
+                    <detectJavaApiLink>false</detectJavaApiLink>
                 </configuration>
                 <executions>
                     <execution>

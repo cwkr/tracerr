@@ -45,6 +45,20 @@ public class ListsTests {
     }
 
     @Test
+    public void listOf4() {
+        List<String> list = Lists.listOf("one");
+        list.add("two");
+        assertEquals(2, list.size());
+    }
+
+    @Test
+    public void listOfNull() {
+        assertThrows(NullPointerException.class, () -> {
+            Lists.listOf((String)null);
+        });
+    }
+
+    @Test
     public void listOfNulls() {
         assertThrows(IllegalArgumentException.class, () -> {
             Lists.listOf(null, null);
@@ -67,6 +81,19 @@ public class ListsTests {
     public void unmodifiableListOf3() {
         List<String> list = Lists.unmodifiableListOf("one", "two");
         assertThrows(UnsupportedOperationException.class, () -> list.add("three"));
+    }
+
+    @Test
+    public void unmodifiableListOf4() {
+        List<String> list = Lists.unmodifiableListOf("one");
+        assertThrows(UnsupportedOperationException.class, () -> list.add("two"));
+    }
+
+    @Test
+    public void unmodifiableListOfNull() {
+        assertThrows(NullPointerException.class, () -> {
+            Lists.unmodifiableListOf((String)null);
+        });
     }
 
     @Test

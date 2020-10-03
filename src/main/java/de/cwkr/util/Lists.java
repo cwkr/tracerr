@@ -32,6 +32,22 @@ public final class Lists {
     }
 
     /**
+     * Creates an {@link ArrayList} containing one element.
+     *
+     * @param element element to add to list
+     * @param <T> element type
+     * @return list instance
+     * @throws NullPointerException if element is {@code null}
+     * @since 1.1.0
+     */
+    public static <T> List<T> listOf(final T element) {
+        Validate.notNull(element);
+        List<T> list = new ArrayList<>(1);
+        list.add(element);
+        return list;
+    }
+
+    /**
      * Creates an {@link ArrayList} containing all elements.
      *
      * @param elements elements to add to list
@@ -60,6 +76,20 @@ public final class Lists {
     public static <T> List<T> listOf(final Collection<? extends T> collection) {
         Validate.noNullElements(collection);
         return new ArrayList<>(collection);
+    }
+
+    /**
+     * Creates an immutable {@link List} containing one element.
+     *
+     * @param element element to add to list
+     * @param <T> element type
+     * @return list instance
+     * @throws NullPointerException if element is {@code null}
+     * @since 1.1.0
+     */
+    public static <T> List<T> unmodifiableListOf(final T element) {
+        Validate.notNull(element);
+        return Collections.singletonList(element);
     }
 
     /**
