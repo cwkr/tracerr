@@ -8,8 +8,8 @@
     <artifactId>validation-util</artifactId>
     <version>1.1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>${project.groupId}:${project.artifactId}</name>
-    <url>https://github.com/cwkr/validation-util</url>
+    <name>Validation Util</name>
+    <url>https://github.com/cwkr/util-java</url>
     <description>Validation utility library</description>
 
     <licenses>
@@ -28,13 +28,13 @@
     </developers>
 
     <scm>
-        <url>https://github.com/cwkr/validation-util</url>
-        <connection>scm:git:git://github.com/cwkr/validation-util.git</connection>
-        <developerConnection>scm:git:git@github.com:cwkr/validation-util.git</developerConnection>
+        <url>https://github.com/cwkr/util-java</url>
+        <connection>scm:git:git://github.com/cwkr/util-java.git</connection>
+        <developerConnection>scm:git:git@github.com:cwkr/util-java.git</developerConnection>
     </scm>
 
     <issueManagement>
-        <url>https://github.com/cwkr/validation-util/issues</url>
+        <url>https://github.com/cwkr/util-java/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
 
