@@ -6,9 +6,9 @@
 
     <groupId>de.cwkr</groupId>
     <artifactId>cwkr-util</artifactId>
-    <version>1.1.1-SNAPSHOT</version>
+    <version>1.2.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Cwkr Util</name>
+    <name>cwkr-util</name>
     <url>https://github.com/cwkr/util-java</url>
     <description>Java Utility Library</description>
 
@@ -119,17 +119,17 @@
                     <dependency>
                         <groupId>net.sourceforge.pmd</groupId>
                         <artifactId>pmd-core</artifactId>
-                        <version>6.24.0</version>
+                        <version>6.28.0</version>
                     </dependency>
                     <dependency>
                         <groupId>net.sourceforge.pmd</groupId>
                         <artifactId>pmd-java</artifactId>
-                        <version>6.24.0</version>
+                        <version>6.28.0</version>
                     </dependency>
                     <dependency>
                         <groupId>de.cwkr</groupId>
                         <artifactId>cwkr-pmd</artifactId>
-                        <version>1.3.0</version>
+                        <version>1.3.1</version>
                     </dependency>
                 </dependencies>
                 <executions>
