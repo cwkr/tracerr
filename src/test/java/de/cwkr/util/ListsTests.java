@@ -15,14 +15,25 @@
  */
 package de.cwkr.util;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.Collections;
 import java.util.List;
-import java.util.Set;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ListsTests {
+    @Test
+    public void emptyList() {
+        List<String> strings = Lists.emptyList();
+        assertNotNull(strings);
+        assertTrue(strings.isEmpty());
+        strings.add("one");
+        assertEquals(1, strings.size());
+    }
+
     @Test
     public void listOf1() {
         List<String> list = Lists.listOf(Collections.singleton("one"));

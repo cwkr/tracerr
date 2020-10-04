@@ -32,6 +32,17 @@ public final class Lists {
     }
 
     /**
+     * Creates an empty {@link ArrayList}.
+     *
+     * @param <T> element type
+     * @return list instance
+     * @since 1.2.0
+     */
+    public static <T> List<T> emptyList() {
+        return new ArrayList<>();
+    }
+
+    /**
      * Creates an {@link ArrayList} containing one element.
      *
      * @param element element to add to list
