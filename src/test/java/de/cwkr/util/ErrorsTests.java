@@ -15,15 +15,6 @@
  */
 package de.cwkr.util;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import org.apache.commons.lang3.StringUtils;
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
-import org.slf4j.Logger;
 import static de.cwkr.util.Lists.listOf;
 import static java.util.Collections.emptyList;
 import static java.util.Collections.singletonList;
@@ -36,6 +27,16 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import org.apache.commons.lang3.StringUtils;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.slf4j.Logger;
 
 @ExtendWith(MockitoExtension.class)
 public class ErrorsTests {
@@ -76,6 +77,12 @@ public class ErrorsTests {
         Errors errors = new Errors(listOf("one", "two", "three"));
         assertThrows(CustomException.class, () -> errors.throwErrors(CustomException::new, "There were {} errors", errors
             .countErrors()));
+    }
+
+    @Test
+    public void throwErrorsWithNoErrors() {
+        Errors errors = new Errors();
+        errors.throwErrors(CustomException::new, "There were {} errors", errors.countErrors());
     }
 
     @Test

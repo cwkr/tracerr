@@ -20,13 +20,24 @@ import org.apache.commons.lang3.Validate;
 import java.util.*;
 
 /**
- * Provides utility methods for {@link List} instances.
+ * Provides utility methods for {@link Set} instances.
  *
  * @author Christian Winkler
  * @since 1.1.0
  */
 public final class Sets {
     private Sets() {
+    }
+
+    /**
+     * Creates an empty {@link LinkedHashSet}.
+     *
+     * @param <T> element type
+     * @return set instance
+     * @since 1.2.0
+     */
+    public static <T> Set<T> emptyOrderedSet() {
+        return new LinkedHashSet<>();
     }
 
     /**

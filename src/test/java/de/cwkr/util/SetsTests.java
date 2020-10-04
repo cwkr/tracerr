@@ -15,15 +15,25 @@
  */
 package de.cwkr.util;
 
-import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Collections;
 import java.util.Set;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import org.junit.jupiter.api.Test;
 
 public class SetsTests {
+    @Test
+    public void emptyOrderedSet() {
+        Set<String> strings = Sets.emptyOrderedSet();
+        assertNotNull(strings);
+        assertTrue(strings.isEmpty());
+        strings.add("one");
+        assertEquals(1, strings.size());
+    }
+
     @Test
     public void orderedSetOf1() {
         Set<String> set = Sets.orderedSetOf(Collections.singleton("one"));

@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.2.0] - 2020-10-04
+
+### Added
+
+- `de.cwkr.util.Lists.emptyList()`
+- `de.cwkr.util.Maps.emptyOrderedMap()`
+- `de.cwkr.util.Maps.entryOf()`
+- `de.cwkr.util.Maps.orderedMapOf()`
+- `de.cwkr.util.Maps.orderedMapOfEntries()`
+- `de.cwkr.util.Maps.unmodifiableEntryOf()`
+- `de.cwkr.util.Maps.unmodifiableMapOf()`
+- `de.cwkr.util.Maps.unmodifiableMapOfEntries()`
+- `de.cwkr.util.Sets.emptyOrderedSet()`
+
+
 ## [1.1.0] - 2020-10-03
 
 ### Added
