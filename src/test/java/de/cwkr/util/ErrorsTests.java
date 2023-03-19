@@ -99,7 +99,7 @@ public class ErrorsTests {
     public void toStringTest() {
         Errors errors = new Errors(listOf("one", "two"));
         String x = errors.toString();
-        assertTrue(StringUtils.contains(x, "{one,two}"));
+        assertTrue(StringUtils.contains(x, "[one, two]"));
     }
 
     @Test
